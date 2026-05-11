@@ -118,3 +118,43 @@ export async function saveUser(api, user) {
 ### ❌ Avoid dumping unrelated helpers into global utility files
 
 - Do not put domain-specific logic into a generic `utils.ts` if a domain `functions.ts` is more appropriate
+
+---
+
+## 5) Class member visibility and readonly enforcement
+
+### ❌ Bad: TypeScript `private`, missing `_` for protected, mutable field by default
+
+```ts
+export class UserCache {
+  private ttlMs = 60_000;
+  protected retries = 3;
+  config: Config;
+
+  constructor(config: Config) {
+    this.config = config;
+  }
+
+  private refresh() {
+    // ...
+  }
+}
+```
+
+### ✅ Good: `#private`, `_protected`, `readonly` by default
+
+```ts
+export class UserCache {
+  #ttlMs = 60_000;
+  protected readonly _retries = 3;
+  readonly config: Config;
+
+  constructor(config: Config) {
+    this.config = config;
+  }
+
+  #refresh() {
+    // ...
+  }
+}
+```
