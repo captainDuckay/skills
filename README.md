@@ -1,37 +1,30 @@
-# Captain Duckay Skills
+# Captain Duckay Skills (Codeberg)
 
-Distributes Pi skill bundles from **Codeberg**.
+This repository is a **skills source** for the `skills@latest` manager.
 
-## Quick use
+## Use with skills manager
 
-Install all bundled skills into `~/.pi/agent/skills`:
-
-```bash
-npx git+https://codeberg.org/captainDuckay/skills.git install
-```
-
-List bundled skills:
+List available skills from this repo:
 
 ```bash
-npx git+https://codeberg.org/captainDuckay/skills.git list
+npx skills@latest add https://codeberg.org/captainDuckay/skills.git -l
 ```
 
-Install to a custom folder:
+Install all skills from this repo:
 
 ```bash
-npx git+https://codeberg.org/captainDuckay/skills.git install ./skills
+npx skills@latest add https://codeberg.org/captainDuckay/skills.git --all -y
 ```
 
-## NPM publish option
-
-This repo is set up as the package `@captain-duckay/skills`.
-
-If you publish it to npm, usage becomes:
+Install a specific skill:
 
 ```bash
-npx @captain-duckay/skills@latest install
+npx skills@latest add https://codeberg.org/captainDuckay/skills.git \
+  --skill project-code-standards -y
 ```
 
-## Why not `npx skills@latest`?
+## Important
 
-The unscoped `skills` package name is already owned on npm by another project, so that exact command cannot point to this repo unless you control that package.
+- `npx skills@latest` is the package/skill manager (kept as-is).
+- Shorthand source format like `owner/repo` currently resolves to GitHub.
+- For Codeberg, use the full `.git` URL as shown above.
