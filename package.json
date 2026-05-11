@@ -1,0 +1,28 @@
+{
+  "name": "@captain-duckay/skills",
+  "version": "0.1.0",
+  "description": "Captain Duckay's Pi skills packaged for npx install from Codeberg",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "skills": "bin/skills.js"
+  },
+  "files": [
+    "bin",
+    "project-code-standards"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://codeberg.org/captainDuckay/skills.git"
+  },
+  "homepage": "https://codeberg.org/captainDuckay/skills",
+  "bugs": {
+    "url": "https://codeberg.org/captainDuckay/skills/issues"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "check": "node bin/skills.js list"
+  }
+}
