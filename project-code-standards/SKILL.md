@@ -1,6 +1,6 @@
 ---
 name: project-code-standards
-description: Enforces project coding conventions for icon usage, functional-first code organization, and class member style. Use when users mention standards, conventions, refactoring, icons, class property visibility, readonly enforcement, functional programming, pure functions, or ask for implementation in a codebase.
+description: Enforces project coding conventions for icon usage, functional-first and declarative code organization, class member style, readable constants, and opportunistic cleanup discipline. Use when users mention standards, conventions, refactoring, declarative vs imperative patterns, magic numbers, readability, boy scout rule, cleanup commits, icons, class property visibility, readonly enforcement, functional programming, pure functions, or ask for implementation in a codebase.
 ---
 
 # Project Code Standards
@@ -35,7 +35,36 @@ Apply these standards to all implementation and refactor tasks unless the user e
 - Mark class properties as `readonly` whenever they are not reassigned after initialization.
 - Prefer `readonly` constructor-initialized fields by default; make fields mutable only when mutation is required by behavior.
 
-### 4) Exceptions (strict but practical)
+### 4) Declarative-over-imperative style
+
+- Prefer declarative constructs over imperative control flow.
+- Express intent with transformations/composition (`map`, `filter`, `reduce`, `some`, `every`, derived state, config objects) before reaching for manual loops and mutation.
+- Prefer data-driven mappings/tables over long conditional chains when behavior is selectable.
+- Use imperative flow only at boundaries or where required for clarity/performance.
+- If imperative code is kept, add a short comment explaining why a declarative form was not appropriate.
+- See [EXAMPLES.md](EXAMPLES.md) §6 for declarative vs imperative patterns and allowed exceptions.
+
+### 5) No magic numbers (favor readability)
+
+- Do not leave unexplained numeric literals in business logic.
+- Extract numbers into well-named constants that explain intent and units.
+- Prefer domain-local constants near usage; promote to shared constants only when truly reused.
+- Include units in names when relevant (`SESSION_TIMEOUT_MS`, `MAX_RETRY_COUNT`, `TAX_RATE_PERCENT`).
+- Allowed inline literals without extraction: only `0`, `1`, and `-1` when intent is obvious.
+- Apply this rule in production code and tests.
+- For any other inline numeric literal, extract to a named constant; if extraction is impossible (e.g., generated code or external API contract), add a short inline comment with rationale.
+- See [EXAMPLES.md](EXAMPLES.md) §7 for magic-number replacements and allowed exceptions.
+
+### 6) Boy Scout Rule (leave the area cleaner)
+
+- If you touch a file and notice nearby code that violates this skill's standards, you may fix it opportunistically.
+- Keep Boy Scout cleanup scoped to the same domain/area you are already modifying; avoid broad drive-by refactors.
+- Do not mix Boy Scout cleanup into the feature/fix commit.
+- Put cleanup changes in a separate explicit commit with a clear message indicating standards cleanup.
+- In PR/summary output, list Boy Scout changes separately from the primary task changes.
+- See [EXAMPLES.md](EXAMPLES.md) §8 for commit-separation examples.
+
+### 7) Exceptions (strict but practical)
 
 Use exceptions only when `#` private members are not viable due to framework/tooling constraints. Common allowed cases:
 
@@ -60,8 +89,15 @@ For each coding task:
 5. Keep impure operations at boundaries.
 6. Enforce `#` private members and `_` protected member naming in classes.
 7. Add `readonly` to class properties unless mutation is required.
-8. If `#` cannot be used, apply a documented exception with minimal visibility.
-9. If custom icons seem needed, ask for explicit approval first.
+8. Prefer declarative expressions over imperative loops/branching for business logic.
+9. If imperative code remains, ensure it is boundary-focused or justified inline.
+10. Replace inline numeric literals (except obvious `0`/`1`/`-1`) with named constants and unit-aware names.
+11. Apply the magic-number rule to tests as strictly as production code.
+12. If any other inline number remains, justify it with a short comment.
+13. While editing, scan nearby touched code for standards violations and apply scoped Boy Scout cleanup when safe.
+14. Keep Boy Scout cleanup in a separate explicit commit from the main feature/fix commit.
+15. If `#` cannot be used, apply a documented exception with minimal visibility.
+16. If custom icons seem needed, ask for explicit approval first.
 
 ## Output expectations
 
@@ -70,8 +106,12 @@ When relevant, briefly note in the response:
 - Which approved icon package was used (if any)
 - Which logic was extracted to `functions.ts`
 - Which class members were enforced as `#private`, `_protected`, and `readonly`
+- Where declarative patterns were chosen over imperative flow
+- Which magic numbers were replaced with named constants
+- Any Boy Scout cleanups made outside the primary task scope
+- Confirmation that Boy Scout cleanups were isolated in their own commit
 - Any class member exceptions used, and why
-- Why any remaining side effects could not be made pure
+- Why any remaining side effects, imperative sections, or inline numeric literals could not be made declarative/readable
 
 ## Advanced features
 
