@@ -14,6 +14,18 @@ export const calculateCartTotal = (items: CartItem[]): number =>
 
 Framework hooks, API calls, persistence, and UI wiring should call these functions from their boundaries.
 
+## Domain declarations
+
+Separate exported domain declarations by kind in the nearest owning domain:
+
+- Interfaces belong in `models.ts`.
+- Type aliases belong in `types.ts`.
+- Shared constants belong in `constants.ts`.
+
+Export declarations from those files when they form part of the domain or cross a file boundary. Keep implementation-private interfaces, types, and constants colocated with their owner and unexported. Do not widen a module's public surface solely to satisfy file placement.
+
+Prefer domain-local declaration files over repository-wide catch-all files. Promote a declaration to a shared domain only when it is genuinely reused there.
+
 ## Class members
 
 - Use `#` private fields and methods.
