@@ -1,6 +1,6 @@
 # Angular Standards
 
-Read the matching sections for Angular work that creates components, names framework artifacts, or adds, replaces, or modifies icons.
+Read the matching sections for Angular work that creates components, names framework artifacts, implements forms or async data loading, or adds, replaces, or modifies icons.
 
 ## New component structure
 
@@ -44,6 +44,29 @@ export class SessionStore {}
 The responsibility name replaces generic `.service` and `Service` suffixes when the surrounding folder makes the concept unambiguous. Add a role suffix only when it disambiguates multiple concepts, framework tooling requires it, or the established project convention requires it.
 
 When an existing project consistently uses role suffixes, preserve that convention unless a naming migration is explicitly in scope.
+
+## Signal Forms by default
+
+For each new form, inspect the project's Angular version and forms availability before choosing an API. In Angular 21 and newer projects where `@angular/forms/signals` is available, use Signal Forms as the default.
+
+Choose another forms API only when a concrete constraint requires it, such as incompatible Angular versions, third-party integration, or an explicit project requirement. In projects without Signal Forms, follow the established forms strategy.
+
+Preserve the API of an existing Reactive Forms or template-driven form unless migration is explicitly requested or already in scope.
+
+The forms decision is complete when Signal Forms is selected or a concrete compatibility or project constraint identifies the appropriate alternative. Use the `angular-developer` skill for API-level Signal Forms guidance.
+
+## Reactive resources by default
+
+For each new reactive data-loading flow, inspect the project's Angular version and API availability. Use Angular resources as the default when available:
+
+- Use `httpResource` for reactive HTTP reads that should use Angular's HTTP stack, including its interceptors.
+- Use `resource` for reactive reads that need a custom loader or use a non-HTTP source.
+
+Use command-oriented APIs for mutations such as create, update, and delete operations. Use RxJS when the requirement depends on multi-emission streams, WebSockets, or complex event-stream composition. Compatibility, third-party integration, and explicit project requirements may also determine another approach.
+
+Preserve existing Observable, `HttpClient`, and promise-based loading flows unless migration is explicitly requested or already in scope.
+
+The data-loading decision is complete when `httpResource` or `resource` is selected, or a concrete requirement identifies the appropriate alternative. Use the `angular-developer` skill's resource guidance for API-level implementation details.
 
 ## Icons
 

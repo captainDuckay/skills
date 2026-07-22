@@ -6,7 +6,7 @@ Stack-aware project conventions for implementation and refactoring. The skill ma
 
 - `GENERAL.md` — conventions shared across languages
 - `TYPESCRIPT.md` — TypeScript-specific conventions
-- `ANGULAR.md` — Angular component structure, artifact naming, and icon conventions
+- `ANGULAR.md` — Angular structure, naming, Signal Forms, reactive resources, and icons
 
 `SKILL.md` is the authoritative selection process. Each branch file is the authoritative source for its own conventions.
 
