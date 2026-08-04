@@ -37,7 +37,7 @@ Runs a structured grilling session to force shared understanding, then produces 
 ## Install (from this repo)
 
 ```bash
-npx skills@latest add https://codeberg.org/captainDuckay/skills.git \
+npx skills@latest add captainDuckay/skills \
   --skill project-kickoff-grill -y
 ```
 
