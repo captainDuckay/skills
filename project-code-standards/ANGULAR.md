@@ -1,6 +1,30 @@
 # Angular Standards
 
-Read the matching sections for Angular work that creates components, chooses component selectors or host shape, names framework artifacts, implements forms or async data loading, or adds, replaces, or modifies icons.
+Read the matching sections for Angular work that creates components, decides component cuts in templates, chooses component selectors or host shape, names framework artifacts, implements forms or async data loading, or adds, replaces, or modifies icons.
+
+## Component cuts
+
+When authoring or expanding a template, **cut** a child component at each clear UI region instead of nesting more markup in the parent. A cut is warranted when any of these hold:
+
+1. **Collection body** — inside `@for`, the item markup (often nested under `<li>`, `<tr>`, or a card/tile wrapper) is more than a **leaf**.
+2. **Repeated structure** — the same multi-element shape appears in more than one place in the work.
+3. **Nameable UI concept** — the block has a natural noun (row, card, chip, toolbar, empty state, address fields).
+4. **Local interaction** — the block owns its own controls or local UI state (expand, select, edit, menu).
+5. **Substantial branch** — an `@if` / `@switch` arm is a full UI region, not a one-line spinner or empty message.
+
+A **leaf** stays inline: a single text node, a single icon or badge, or one plain control with no surrounding structure of its own.
+
+After each cut, apply **Host over wrapper** and **New component structure**. Collection items that *are* list or table rows often use a native host (`li[app-…]`, `tr[app-…]`):
+
+```html
+@for (product of products(); track product.id) {
+  <li app-product-row [product]="product" />
+}
+```
+
+The parent keeps the list shell and iteration; the cut owns the item.
+
+The decision is complete when every non-leaf `@for` body, repeated block, nameable region, and substantial branch in the changed templates is either cut into a component or left as an explicit leaf.
 
 ## Host over wrapper
 

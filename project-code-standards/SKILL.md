@@ -1,6 +1,6 @@
 ---
 name: project-code-standards
-description: Applies stack-aware project coding conventions. Use for implementation and refactoring in any codebase; map affected work areas, apply general standards everywhere, load TypeScript conventions only for TypeScript work, and load Angular conventions only for Angular component structure, selectors and host shape, artifact naming, forms, async data loading, or icon changes.
+description: Applies stack-aware project coding conventions. Use for implementation and refactoring in any codebase; map affected work areas, apply general standards everywhere, load TypeScript conventions only for TypeScript work, and load Angular conventions only for Angular component structure, component cuts in templates, selectors and host shape, artifact naming, forms, async data loading, or icon changes.
 ---
 
 # Project Code Standards
@@ -24,7 +24,7 @@ This step is complete when every anticipated file belongs to a work area with an
 
 - Always read [GENERAL.md](GENERAL.md) and apply it to every work area.
 - For TypeScript work areas, read [TYPESCRIPT.md](TYPESCRIPT.md). Apply it only to those work areas.
-- For Angular work that creates components, chooses component selectors or host shape, names framework artifacts, implements forms or async data loading, or modifies icons, read [ANGULAR.md](ANGULAR.md). Apply it only to that Angular work area.
+- For Angular work that creates components, decides component cuts in templates, chooses component selectors or host shape, names framework artifacts, implements forms or async data loading, or modifies icons, read [ANGULAR.md](ANGULAR.md). Apply it only to that Angular work area.
 
 A branch applies only when the affected work area matches its condition. The presence of a technology elsewhere in the repository does not activate that branch.
 
