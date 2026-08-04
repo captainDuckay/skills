@@ -1,6 +1,37 @@
 # Angular Standards
 
-Read the matching sections for Angular work that creates components, names framework artifacts, implements forms or async data loading, or adds, replaces, or modifies icons.
+Read the matching sections for Angular work that creates components, chooses component selectors or host shape, names framework artifacts, implements forms or async data loading, or adds, replaces, or modifies icons.
+
+## Host over wrapper
+
+For each new component (and each component whose outer markup is in scope), choose the **selector** so the **host** is the element of intent. The template renders *inside* the host — do not open the template with a second copy of the landmark or control the host already is.
+
+Prefer a **native host** (`tag[prefix-name]`) when the component *is* a standard element consumers should keep treating as that element (semantics, built-in APIs, ARIA on the real tag):
+
+```ts
+@Component({
+  selector: 'article[app-product-card]',
+  templateUrl: './product-card.html',
+  styleUrl: './product-card.scss',
+})
+export class ProductCard {}
+```
+
+Consumer:
+
+```html
+<article app-product-card [product]="p">…</article>
+```
+
+`product-card.html` holds inner structure only — not another `<article>`. Same pattern for `button[app-…]`, `section[app-…]`, `nav[app-…]`, `form[app-…]`, and other natives when that tag *is* the component.
+
+Prefer a **custom element** type selector (`app-user-chip`) when there is no native stand-in and the component is a new UI concept. Use the project’s short prefix; never use `ng`.
+
+Use an **attribute-only** selector (`[app-dropzone]`) when any of several tags may host the behavior; narrow with `:not(…)` when some tags must never match.
+
+Attribute and combined selectors use lowercase dash-case attributes and the same prefix discipline as custom elements. Angular does not error on unknown attributes the way it does on unknown custom tags — import the component at every use site.
+
+Selector decision is complete when the host carries the outer semantics or control surface, the template does not re-wrap that same tag, and the choice is custom type, native+attribute, or justified attribute-only. For supported selector kinds and matching rules, use the `angular-component-selectors` skill or [Component selectors](https://angular.dev/guide/components/selectors).
 
 ## New component structure
 
@@ -23,7 +54,7 @@ Use the project's configured stylesheet extension. Reference the external files 
 export class UserCard {}
 ```
 
-Apply this structure to new components. Preserve existing inline components unless migration or structural refactoring is explicitly in scope.
+Apply this structure to new components. Preserve existing inline components unless migration or structural refactoring is explicitly in scope. Pair this file layout with **Host over wrapper** when setting `selector`.
 
 ## Intent-based artifact naming
 
