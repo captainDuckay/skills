@@ -1,0 +1,10 @@
+<header>
+  <p class="eyebrow">Skills</p>
+  <h1>The techniques</h1>
+  <p class="lead">Each skill teaches an agent one part of the Captain's Chest way.</p>
+</header>
+<ul class="grid plain-list">
+  @for (skill of skills; track skill.slug) {
+    <li school-skill-card [skill]="skill"></li>
+  }
+</ul>

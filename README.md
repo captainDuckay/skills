@@ -28,3 +28,8 @@ npx skills@latest add captainDuckay/skills \
 - `npx skills@latest` is the package/skill manager (kept as-is).
 - Shorthand source format `owner/repo` resolves to GitHub (this repo).
 - Full clone URL also works: `https://github.com/captainDuckay/skills.git`.
+
+## Website
+
+The skills are published as the School of the Captain's Chest at https://school.captains-chest.com. The site lives in
+[`site/`](site/README.md); any new skill folder with a `SKILL.md` shows up there automatically.
