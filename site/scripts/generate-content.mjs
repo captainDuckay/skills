@@ -8,7 +8,7 @@ import { marked } from 'marked';
 
 const siteDir = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const repoDir = resolve(siteDir, '..');
-const repoUrl = 'https://github.com/captainDuckay/skills';
+const repoUrl = 'https://github.com/captains-chest/skills';
 const sourceBranch = 'main';
 const ignoredDirs = new Set(['site', 'docs', 'node_modules']);
 
@@ -67,7 +67,7 @@ const readSkill = (slug) => {
     name: meta.name,
     description: meta.description,
     ...splitDescription(meta.description),
-    install: `npx skills@latest add captainDuckay/skills --skill ${slug} -y`,
+    install: `npx skills@latest add captains-chest/skills --skill ${slug} -y`,
     sourceUrl: `${repoUrl}/tree/${sourceBranch}/${slug}`,
     docs,
     otherFiles,

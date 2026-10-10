@@ -7,19 +7,19 @@ This repository is a **skills source** for the `skills@latest` manager.
 List available skills from this repo:
 
 ```bash
-npx skills@latest add captainDuckay/skills -l
+npx skills@latest add captains-chest/skills -l
 ```
 
 Install all skills from this repo:
 
 ```bash
-npx skills@latest add captainDuckay/skills --all -y
+npx skills@latest add captains-chest/skills --all -y
 ```
 
 Install a specific skill:
 
 ```bash
-npx skills@latest add captainDuckay/skills \
+npx skills@latest add captains-chest/skills \
   --skill project-code-standards -y
 ```
 
@@ -27,7 +27,7 @@ npx skills@latest add captainDuckay/skills \
 
 - `npx skills@latest` is the package/skill manager (kept as-is).
 - Shorthand source format `owner/repo` resolves to GitHub (this repo).
-- Full clone URL also works: `https://github.com/captainDuckay/skills.git`.
+- Full clone URL also works: `https://github.com/captains-chest/skills.git`.
 
 ## Website
 

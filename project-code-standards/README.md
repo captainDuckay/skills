@@ -13,7 +13,7 @@ Stack-aware project conventions for implementation and refactoring. The skill ma
 ## Install
 
 ```bash
-npx skills@latest add captainDuckay/skills \
+npx skills@latest add captains-chest/skills \
   --skill project-code-standards -y
 ```
 

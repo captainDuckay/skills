@@ -37,7 +37,7 @@ Runs a structured grilling session to force shared understanding, then produces 
 ## Install (from this repo)
 
 ```bash
-npx skills@latest add captainDuckay/skills \
+npx skills@latest add captains-chest/skills \
   --skill project-kickoff-grill -y
 ```
 
