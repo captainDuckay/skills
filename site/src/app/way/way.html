@@ -1,0 +1,10 @@
+<header>
+  <p class="eyebrow">The Way</p>
+  <h1>Seven tenets of the Captain's Chest</h1>
+  <p class="lead">Each tenet is drawn from what the skills actually say, and links back to the skills it comes from.</p>
+</header>
+<ol class="stack plain-list">
+  @for (tenet of tenets; track tenet.slug; let index = $index) {
+    <li school-tenet-card [tenet]="tenet" [number]="index + 1"></li>
+  }
+</ol>
