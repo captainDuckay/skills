@@ -2,7 +2,7 @@
 
 ### Issue tracker
 
-GitHub Issues on `captainDuckay/skills` via the `gh` CLI. See `docs/agents/issue-tracker.md`.
+GitHub Issues on `captains-chest/skills` via the `gh` CLI. See `docs/agents/issue-tracker.md`.
 
 ### Triage labels
 
