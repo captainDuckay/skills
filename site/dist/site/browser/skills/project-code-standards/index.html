@@ -1,0 +1,226 @@
+<!DOCTYPE html><html lang="en"><head>
+<base href="/">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Project Code Standards · School of the Captain's Chest</title>
+<meta name="description" content="The opinionated school of how Captain's Chest codes and works, written down as agent skills.">
+<style>:root{color-scheme:light dark;--bg:#f7f5f0;--fg:#1d1b18;--muted:#5d574d;--card:#fff;--line:#e3ddd2;--accent:#a8590b;--accent-fg:#fff}@media(prefers-color-scheme:dark){:root{--bg:#121315;--fg:#ecebe8;--muted:#a7a49d;--card:#1b1d20;--line:#2c2f33;--accent:#f0a24a;--accent-fg:#1a1205}}*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0;font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--fg)}main{max-width:52rem;margin:0 auto;padding:4rem 1.25rem 3rem}.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;background:var(--card);padding:.5rem 1rem}h1{font-size:clamp(2.2rem,6vw,3.4rem);line-height:1.1;margin:0 0 1rem;letter-spacing:-.02em}h2{font-size:1.35rem;margin:0 0 .4rem}.lead{font-size:1.2rem;color:var(--muted);max-width:38rem;margin:0 0 3rem}.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:.8rem;color:var(--accent);font-weight:600;margin:0 0 .75rem}.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.5rem}.card p{color:var(--muted);margin:0 0 1.2rem}.links{display:flex;flex-wrap:wrap;gap:.75rem}a{color:var(--accent)}a:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}.btn{display:inline-block;padding:.55rem 1rem;border-radius:9px;text-decoration:none;font-weight:600;border:1px solid var(--line);color:var(--fg)}ul.plain{padding-left:1.2rem;color:var(--muted)}footer{margin-top:4rem;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line);padding-top:1.25rem}.page{max-width:56rem;margin:0 auto;padding:0 1.25rem}.page main{max-width:none;padding:2.5rem 0 1rem}main:focus{outline:none}.site-header{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;padding:1.25rem 0;border-bottom:1px solid var(--line)}.brand{font-weight:700;text-decoration:none;color:var(--fg)}.site-header ul{display:flex;flex-wrap:wrap;gap:1.25rem;list-style:none;margin:0;padding:0}.site-header a{text-decoration:none}.site-header nav a{color:var(--muted);font-weight:600}.site-header nav a:hover,.site-header nav a.active{color:var(--accent)}.stack{display:grid;gap:1.25rem}h3{font-size:1.2rem;margin:0 0 .4rem}.card p:last-child{margin-bottom:0}.sources{font-size:.92rem}code,pre{font:.9em ui-monospace,SFMono-Regular,Menlo,monospace}pre{background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:.85rem 1rem;overflow-x:auto}details.doc{margin-top:1rem}details.doc summary{cursor:pointer;font-weight:600}.prose{color:var(--fg)}.prose h1{font-size:1.6rem}.prose h2{font-size:1.25rem;margin-top:1.5rem}footer p{margin:.25rem 0}</style><link rel="stylesheet" href="styles-D5E2TDC3.css" media="print" data-beasties-media="all"><noscript><link rel="stylesheet" href="styles-D5E2TDC3.css"></noscript></head>
+<body><!--nghm--><script type="text/javascript" id="ng-event-dispatch-contract">(()=>{function p(t,n,r,o,e,i,f,m){return{eventType:t,event:n,targetElement:r,eic:o,timeStamp:e,eia:i,eirp:f,eiack:m}}function u(t){let n=[],r=e=>{n.push(e)};return{c:t,q:n,et:[],etc:[],d:r,h:e=>{r(p(e.type,e,e.target,t,Date.now()))}}}function s(t,n,r){for(let o=0;o<n.length;o++){let e=n[o];(r?t.etc:t.et).push(e),t.c.addEventListener(e,t.h,r)}}function c(t,n,r,o,e=window){let i=u(t);e._ejsas||(e._ejsas={}),e._ejsas[n]=i,s(i,r),s(i,o,!0)}window.__jsaction_bootstrap=c;})();
+</script><script>window.__jsaction_bootstrap(document.body,"ng",["click"],[]);</script>
+<school-root ng-version="22.2.2" ngh="2" ng-server-context="ssg"><a href="#main" class="skip">Skip to content</a><div class="page"><header school-site-header="" class="site-header" ngh="0"><a routerlink="/" class="brand" href="/" jsaction="click:;">School of the Captain's Chest</a><nav aria-label="Main"><ul><li><a routerlink="/way" routerlinkactive="active" ariacurrentwhenactive="page" href="/way" class="" jsaction="click:;">The Way</a></li><li><a routerlink="/skills" routerlinkactive="active" ariacurrentwhenactive="page" href="/skills" class="active" aria-current="page" jsaction="click:;">Skills</a></li><li><a href="https://captains-chest.com">Captain's Chest</a></li></ul></nav></header><main id="main" tabindex="-1"><router-outlet></router-outlet><school-skill ngh="1"><header><p class="eyebrow"><a routerlink="/skills" href="/skills" jsaction="click:;">Skills</a></p><h1>Project Code Standards</h1><p class="lead">Applies stack-aware project coding conventions.</p></header><div class="stack"><section aria-labelledby="when" class="card"><h2 id="when">When to use it</h2><p>Use for implementation and refactoring in any codebase; map affected work areas, apply general standards everywhere, load TypeScript conventions only for TypeScript work, and load Angular conventions only for Angular component structure, component cuts in templates, selectors and host shape, artifact naming, forms, async data loading, or icon changes.</p></section><!----><section aria-labelledby="principles" class="card"><h2 id="principles">Principles it encodes</h2><ul class="plain"><li>Map every affected work area and its language and framework before writing code.</li><li>General standards apply everywhere; TypeScript and Angular standards apply only to matching work.</li><li>Prefer pure functions for domain logic and keep side effects at system boundaries.</li><li>Prefer declarative, data-driven control flow when it is at least as clear.</li><li>Name numeric literals that carry domain meaning, including units.</li><li>TypeScript: pure logic in a domain functions.ts; interfaces in models.ts, type aliases in types.ts, constants in constants.ts.</li><li>TypeScript: # private members, _ for protected, readonly by default.</li><li>Angular: cut a child component at each clear UI region, and let the host be the element of intent.</li><li>Angular: one folder per component with separate files, and no framework-role suffixes in names.</li><li>Angular: Signal Forms and httpResource/resource by default where available.</li><li>Angular: icons from @captains-chest/material-symbols-rounded-icons (outline and filled).</li><li>Boy Scout cleanup, kept close to the change and committed separately.</li><!----></ul><p class="sources"> Part of the Way: <a routerlink="/way" href="/way#pure-core" jsaction="click:;">A pure core, with effects at the edges</a>, <!----><a routerlink="/way" href="/way#name-for-intent" jsaction="click:;">Name things for what they mean</a>, <!----><a routerlink="/way" href="/way#only-where-it-fits" jsaction="click:;">Standards apply only where they fit</a>, <!----><a routerlink="/way" href="/way#modern-angular" jsaction="click:;">Modern Angular, our own building blocks</a>, <!----><a routerlink="/way" href="/way#leave-it-cleaner" jsaction="click:;">Leave it cleaner, close to the change</a><!----><!----></p><!----></section><section aria-labelledby="use" class="card"><h2 id="use">How to use it</h2><p>Install it into your agent with the skills manager:</p><pre><code>npx skills@latest add captains-chest/skills --skill project-code-standards -y</code></pre><p class="links"><a class="btn" href="https://github.com/captains-chest/skills/tree/main/project-code-standards">View the source on GitHub</a></p></section><section aria-labelledby="docs"><h2 id="docs" class="eyebrow">The full text</h2><details class="card doc"><summary>SKILL.md</summary><div class="prose"><h1>Project Code Standards</h1>
+<p>Apply standards through an <strong>applicability map</strong> so conventions stay within their matching work areas.</p>
+<h2>1. Map affected work areas</h2>
+<p>Before implementation, identify every project or work area the task will affect. Determine each area's language and framework from this evidence, in order:</p>
+<ol>
+<li>The files being changed or created.</li>
+<li>The nearest project manifests and configuration.</li>
+<li>Conventions in neighboring code.</li>
+<li>Repository-wide configuration as a fallback.</li>
+</ol>
+<p>Treat mixed repositories as multiple work areas. Update the map if implementation expands into additional files or projects.</p>
+<p>This step is complete when every anticipated file belongs to a work area with an identified language and, when relevant, framework.</p>
+<h2>2. Load matching standards</h2>
+<ul>
+<li>Always read <a href="GENERAL.md">GENERAL.md</a> and apply it to every work area.</li>
+<li>For TypeScript work areas, read <a href="TYPESCRIPT.md">TYPESCRIPT.md</a>. Apply it only to those work areas.</li>
+<li>For Angular work that creates components, decides component cuts in templates, chooses component selectors or host shape, names framework artifacts, implements forms or async data loading, or modifies icons, read <a href="ANGULAR.md">ANGULAR.md</a>. Apply it only to that Angular work area.</li>
+</ul>
+<p>A branch applies only when the affected work area matches its condition. The presence of a technology elsewhere in the repository does not activate that branch.</p>
+<p>This step is complete when every work area has the general branch and all matching technology branches, with no unmatched branch selected.</p>
+<h2>3. Implement and verify</h2>
+<p>Implement using the selected standards. Keep each branch scoped to its matching files, including during nearby cleanup.</p>
+<p>Before finishing, account for every modified file in the applicability map and verify that all standards selected for its work area were applied. Resolve any file that does not fit the map before completion.</p>
+</div><p><a href="https://github.com/captains-chest/skills/blob/main/project-code-standards/SKILL.md">SKILL.md on GitHub</a></p></details><details class="card doc"><summary>README.md</summary><div class="prose"><h1>project-code-standards</h1>
+<p>Stack-aware project conventions for implementation and refactoring. The skill maps affected work areas before selecting standards, preventing conventions from one language or framework from leaking into another.</p>
+<h2>Branches</h2>
+<ul>
+<li><code>GENERAL.md</code> — conventions shared across languages</li>
+<li><code>TYPESCRIPT.md</code> — TypeScript-specific conventions</li>
+<li><code>ANGULAR.md</code> — Angular component cuts, host/selector shape, structure, naming, Signal Forms, reactive resources, and icons</li>
+</ul>
+<p><code>SKILL.md</code> is the authoritative selection process. Each branch file is the authoritative source for its own conventions.</p>
+<h2>Install</h2>
+<pre><code class="language-bash">npx skills@latest add captains-chest/skills \
+  --skill project-code-standards -y
+</code></pre>
+<h2>Extending the skill</h2>
+<p>Add a technology branch only when the project has deliberate conventions for that technology. Give it a precise applicability condition in <code>SKILL.md</code>; do not use a technology's presence elsewhere in a repository as sufficient activation.</p>
+</div><p><a href="https://github.com/captains-chest/skills/blob/main/project-code-standards/README.md">README.md on GitHub</a></p></details><details class="card doc"><summary>ANGULAR.md</summary><div class="prose"><h1>Angular Standards</h1>
+<p>Read the matching sections for Angular work that creates components, decides component cuts in templates, chooses component selectors or host shape, names framework artifacts, implements forms or async data loading, or adds, replaces, or modifies icons.</p>
+<h2>Component cuts</h2>
+<p>When authoring or expanding a template, <strong>cut</strong> a child component at each clear UI region instead of nesting more markup in the parent. A cut is warranted when any of these hold:</p>
+<ol>
+<li><strong>Collection body</strong> — inside <code>@for</code>, the item markup (often nested under <code>&lt;li&gt;</code>, <code>&lt;tr&gt;</code>, or a card/tile wrapper) is more than a <strong>leaf</strong>.</li>
+<li><strong>Repeated structure</strong> — the same multi-element shape appears in more than one place in the work.</li>
+<li><strong>Nameable UI concept</strong> — the block has a natural noun (row, card, chip, toolbar, empty state, address fields).</li>
+<li><strong>Local interaction</strong> — the block owns its own controls or local UI state (expand, select, edit, menu).</li>
+<li><strong>Substantial branch</strong> — an <code>@if</code> / <code>@switch</code> arm is a full UI region, not a one-line spinner or empty message.</li>
+</ol>
+<p>A <strong>leaf</strong> stays inline: a single text node, a single icon or badge, or one plain control with no surrounding structure of its own.</p>
+<p>After each cut, apply <strong>Host over wrapper</strong> and <strong>New component structure</strong>. Collection items that <em>are</em> list or table rows often use a native host (<code>li[app-…]</code>, <code>tr[app-…]</code>):</p>
+<pre><code class="language-html">@for (product of products(); track product.id) {
+  &lt;li app-product-row [product]="product" /&gt;
+}
+</code></pre>
+<p>The parent keeps the list shell and iteration; the cut owns the item.</p>
+<p>The decision is complete when every non-leaf <code>@for</code> body, repeated block, nameable region, and substantial branch in the changed templates is either cut into a component or left as an explicit leaf.</p>
+<h2>Host over wrapper</h2>
+<p>For each new component (and each component whose outer markup is in scope), choose the <strong>selector</strong> so the <strong>host</strong> is the element of intent. The template renders <em>inside</em> the host — do not open the template with a second copy of the landmark or control the host already is.</p>
+<p>Prefer a <strong>native host</strong> (<code>tag[prefix-name]</code>) when the component <em>is</em> a standard element consumers should keep treating as that element (semantics, built-in APIs, ARIA on the real tag):</p>
+<pre><code class="language-ts">@Component({
+  selector: 'article[app-product-card]',
+  templateUrl: './product-card.html',
+  styleUrl: './product-card.scss',
+})
+export class ProductCard {}
+</code></pre>
+<p>Consumer:</p>
+<pre><code class="language-html">&lt;article app-product-card [product]="p"&gt;…&lt;/article&gt;
+</code></pre>
+<p><code>product-card.html</code> holds inner structure only — not another <code>&lt;article&gt;</code>. Same pattern for <code>button[app-…]</code>, <code>section[app-…]</code>, <code>nav[app-…]</code>, <code>form[app-…]</code>, and other natives when that tag <em>is</em> the component.</p>
+<p>Prefer a <strong>custom element</strong> type selector (<code>app-user-chip</code>) when there is no native stand-in and the component is a new UI concept. Use the project’s short prefix; never use <code>ng</code>.</p>
+<p>Use an <strong>attribute-only</strong> selector (<code>[app-dropzone]</code>) when any of several tags may host the behavior; narrow with <code>:not(…)</code> when some tags must never match.</p>
+<p>Attribute and combined selectors use lowercase dash-case attributes and the same prefix discipline as custom elements. Angular does not error on unknown attributes the way it does on unknown custom tags — import the component at every use site.</p>
+<p>Selector decision is complete when the host carries the outer semantics or control surface, the template does not re-wrap that same tag, and the choice is custom type, native+attribute, or justified attribute-only. For supported selector kinds and matching rules, use the <code>angular-component-selectors</code> skill or <a href="https://angular.dev/guide/components/selectors">Component selectors</a>.</p>
+<h2>New component structure</h2>
+<p>Create each new component in a folder named for the component. Keep its TypeScript, template, and styles in separate files with the same base name:</p>
+<pre><code class="language-text">user-card/
+├── user-card.ts
+├── user-card.html
+└── user-card.scss
+</code></pre>
+<p>Use the project's configured stylesheet extension. Reference the external files from the component metadata:</p>
+<pre><code class="language-ts">@Component({
+  templateUrl: './user-card.html',
+  styleUrl: './user-card.scss',
+})
+export class UserCard {}
+</code></pre>
+<p>Apply this structure to new components. Preserve existing inline components unless migration or structural refactoring is explicitly in scope. Pair this file layout with <strong>Host over wrapper</strong> when setting <code>selector</code>.</p>
+<h2>Intent-based artifact naming</h2>
+<p>In new projects and projects already using suffixless names, omit framework-role suffixes from file and class names. Prefer <code>user-card.ts</code> and <code>UserCard</code> over <code>user-card.component.ts</code> and <code>UserCardComponent</code>.</p>
+<p>Name injectables for their responsibility rather than the generic mechanism. For example:</p>
+<pre><code class="language-text">session-store/
+└── session-store.ts
+</code></pre>
+<pre><code class="language-ts">@Injectable({ providedIn: 'root' })
+export class SessionStore {}
+</code></pre>
+<p>The responsibility name replaces generic <code>.service</code> and <code>Service</code> suffixes when the surrounding folder makes the concept unambiguous. Add a role suffix only when it disambiguates multiple concepts, framework tooling requires it, or the established project convention requires it.</p>
+<p>When an existing project consistently uses role suffixes, preserve that convention unless a naming migration is explicitly in scope.</p>
+<h2>Signal Forms by default</h2>
+<p>For each new form, inspect the project's Angular version and forms availability before choosing an API. In Angular 21 and newer projects where <code>@angular/forms/signals</code> is available, use Signal Forms as the default.</p>
+<p>Choose another forms API only when a concrete constraint requires it, such as incompatible Angular versions, third-party integration, or an explicit project requirement. In projects without Signal Forms, follow the established forms strategy.</p>
+<p>Preserve the API of an existing Reactive Forms or template-driven form unless migration is explicitly requested or already in scope.</p>
+<p>The forms decision is complete when Signal Forms is selected or a concrete compatibility or project constraint identifies the appropriate alternative. Use the <code>angular-developer</code> skill for API-level Signal Forms guidance.</p>
+<h2>Reactive resources by default</h2>
+<p>For each new reactive data-loading flow, inspect the project's Angular version and API availability. Use Angular resources as the default when available:</p>
+<ul>
+<li>Use <code>httpResource</code> for reactive HTTP reads that should use Angular's HTTP stack, including its interceptors.</li>
+<li>Use <code>resource</code> for reactive reads that need a custom loader or use a non-HTTP source.</li>
+</ul>
+<p>Use command-oriented APIs for mutations such as create, update, and delete operations. Use RxJS when the requirement depends on multi-emission streams, WebSockets, or complex event-stream composition. Compatibility, third-party integration, and explicit project requirements may also determine another approach.</p>
+<p>Preserve existing Observable, <code>HttpClient</code>, and promise-based loading flows unless migration is explicitly requested or already in scope.</p>
+<p>The data-loading decision is complete when <code>httpResource</code> or <code>resource</code> is selected, or a concrete requirement identifies the appropriate alternative. Use the <code>angular-developer</code> skill's resource guidance for API-level implementation details.</p>
+<h2>Icons</h2>
+<p>Use icons from these Angular packages:</p>
+<ul>
+<li><code>@captains-chest/material-symbols-rounded-icons</code></li>
+<li><code>@captains-chest/material-symbols-rounded-icons-filled</code></li>
+</ul>
+<pre><code class="language-ts">import { HomeIcon } from '@captains-chest/material-symbols-rounded-icons';
+import { HomeFilledIcon } from '@captains-chest/material-symbols-rounded-icons-filled';
+</code></pre>
+<p>Prefer an icon from these packages over custom artwork or another icon set. When neither package can satisfy the requirement, pause and ask for explicit approval before introducing custom artwork or a different package.</p>
+</div><p><a href="https://github.com/captains-chest/skills/blob/main/project-code-standards/ANGULAR.md">ANGULAR.md on GitHub</a></p></details><details class="card doc"><summary>GENERAL.md</summary><div class="prose"><h1>General Standards</h1>
+<p>Apply these conventions to every affected work area in a way that is idiomatic for its language and consistent with the project's established architecture.</p>
+<h2>Functional-first design</h2>
+<ul>
+<li>Prefer pure functions for domain logic when practical.</li>
+<li>Place pure logic in the nearest idiomatic, domain-local module. Follow the language and project's existing structure rather than introducing a technology-specific file pattern.</li>
+<li>Keep side effects at system boundaries such as framework integration, API calls, persistence, I/O, and UI wiring.</li>
+<li>Keep domain logic out of components and service classes when a pure domain abstraction expresses it more clearly.</li>
+</ul>
+<p>For example, separate a price calculation from the operation that loads or saves an order. The calculation belongs in a pure domain abstraction; persistence remains at the boundary.</p>
+<h2>Intention-revealing control flow</h2>
+<ul>
+<li>Prefer declarative composition when it is idiomatic and at least as clear as imperative flow.</li>
+<li>Prefer data-driven mappings over long conditional chains when behavior is selected by data.</li>
+<li>Use imperative flow when it improves clarity, performance, resource handling, or framework integration.</li>
+<li>Explain only surprising or non-obvious trade-offs; ordinary idiomatic control flow needs no justification comment.</li>
+</ul>
+<h2>Meaningful numeric literals</h2>
+<p>Name a numeric literal when the name adds domain meaning, units, policy context, or protocol meaning. Typical candidates include:</p>
+<ul>
+<li>Timeouts and durations</li>
+<li>Limits and thresholds</li>
+<li>Retry policies</li>
+<li>Rates and percentages</li>
+<li>Protocol or status values</li>
+</ul>
+<p>Include units in names when relevant, such as <code>sessionTimeoutMs</code> or <code>MaxRetryCount</code>.</p>
+<p>Keep a literal inline when its meaning is locally obvious and extraction would reduce readability. Apply the same test in production code and tests.</p>
+<h2>Boy Scout cleanup</h2>
+<ul>
+<li>Leave the directly affected area cleaner when a nearby improvement is safe and relevant.</li>
+<li>Keep cleanup proximal to files and domains already involved in the task.</li>
+<li>Track and summarize cleanup separately from the primary change.</li>
+<li>When the user requests commits, put cleanup in a separate commit using the dedicated commit skill.</li>
+<li>When commits are not requested, leave the changes uncommitted.</li>
+</ul>
+</div><p><a href="https://github.com/captains-chest/skills/blob/main/project-code-standards/GENERAL.md">GENERAL.md on GitHub</a></p></details><details class="card doc"><summary>TYPESCRIPT.md</summary><div class="prose"><h1>TypeScript Standards</h1>
+<p>Apply these conventions only to TypeScript work areas.</p>
+<h2>Pure-function placement</h2>
+<p>Move domain logic that can be pure into the nearest appropriate domain <code>functions.ts</code> file. Create that file when the domain has no suitable one. Promote logic to a shared domain <code>functions.ts</code> only when it is genuinely shared; avoid unrelated global utility modules.</p>
+<pre><code class="language-ts">// cart/functions.ts
+export const calculateCartTotal = (items: CartItem[]): number =&gt;
+  items.reduce((total, item) =&gt; total + item.price * item.quantity, 0);
+</code></pre>
+<p>Framework hooks, API calls, persistence, and UI wiring should call these functions from their boundaries.</p>
+<h2>Domain declarations</h2>
+<p>Separate exported domain declarations by kind in the nearest owning domain:</p>
+<ul>
+<li>Interfaces belong in <code>models.ts</code>.</li>
+<li>Type aliases belong in <code>types.ts</code>.</li>
+<li>Shared constants belong in <code>constants.ts</code>.</li>
+</ul>
+<p>Export declarations from those files when they form part of the domain or cross a file boundary. Keep implementation-private interfaces, types, and constants colocated with their owner and unexported. Do not widen a module's public surface solely to satisfy file placement.</p>
+<p>Prefer domain-local declaration files over repository-wide catch-all files. Promote a declaration to a shared domain only when it is genuinely reused there.</p>
+<h2>Class members</h2>
+<ul>
+<li>Use <code>#</code> private fields and methods.</li>
+<li>Prefix protected fields and methods with <code>_</code>.</li>
+<li>Mark properties <code>readonly</code> when they are not reassigned after initialization.</li>
+<li>Prefer constructor-initialized <code>readonly</code> fields; introduce mutability only when behavior requires it.</li>
+</ul>
+<pre><code class="language-ts">export class UserCache {
+  readonly config: Config;
+  protected readonly _retryLimit: number;
+  #expiresAt: Date;
+
+  constructor(config: Config, retryLimit: number, expiresAt: Date) {
+    this.config = config;
+    this._retryLimit = retryLimit;
+    this.#expiresAt = expiresAt;
+  }
+
+  #isExpired(now: Date): boolean {
+    return now &gt;= this.#expiresAt;
+  }
+}
+</code></pre>
+<h3>Runtime-access exceptions</h3>
+<p>Use TypeScript <code>private</code> only when a framework or tool requires a string-addressable runtime property, such as:</p>
+<ul>
+<li>Reflection, serialization, or ORM metadata</li>
+<li>Instrumentation that must patch or spy on internals</li>
+<li>Interop boundaries that access members by name</li>
+</ul>
+<p>Choose the narrowest viable visibility, retain <code>readonly</code> where possible, and explain the runtime constraint with a short comment.</p>
+</div><p><a href="https://github.com/captains-chest/skills/blob/main/project-code-standards/TYPESCRIPT.md">TYPESCRIPT.md on GitHub</a></p></details><!----></section></div><!----><!----></school-skill><!----></main><footer school-site-footer="" ngh="0"><p> © Captain's Chest · Built from <a href="https://github.com/captains-chest/skills">captains-chest/skills</a> · MIT licensed
+</p><p> Credits: parts of this repository's agent setup (the agent docs and triage-label vocabulary) and some of its conventions are adapted from <a href="https://github.com/mattpocock/skills">Matt Pocock's skills</a>.
+</p></footer></div></school-root>
+<script src="main-2XYQNTD6.js" type="module"></script>
+<link rel="modulepreload" href="chunk-BOlNTEKO.js">
+
+
+<script id="ng-state" type="application/json">{"__nghData__":[{},{"t":{"0":"t0","1":"t7"},"c":{"0":[{"i":"t0","r":2,"t":{"9":"t1","15":"t2","16":"t3","32":"t6"},"c":{"9":[{"i":"t1","r":1}],"15":[{"i":"t2","r":1,"x":12}],"16":[{"i":"t3","r":1,"t":{"3":"t4"},"c":{"3":[{"i":"t4","r":3,"t":{"2":"t5"},"c":{"2":[{"i":"t5","r":1}]},"x":4},{"i":"t4","r":2,"t":{"2":"t5"},"c":{"2":[]}}]}}],"32":[{"i":"t6","r":1,"x":5}]}}],"1":[]}},{"c":{"5":[{"i":"c1344926059","r":1}]}}]}</script><script>document.querySelectorAll('link[data-beasties-media]').forEach(function(l){l.media=l.getAttribute('data-beasties-media');l.removeAttribute('data-beasties-media')})</script></body></html>

@@ -1,0 +1,9 @@
+{
+  "routes": {
+    "/": {},
+    "/skills": {},
+    "/skills/project-code-standards": {},
+    "/skills/project-kickoff-grill": {},
+    "/way": {}
+  }
+}
