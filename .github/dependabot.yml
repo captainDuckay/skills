@@ -1,0 +1,14 @@
+# Weekly grouped version updates. Security updates are enabled in the repository settings.
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "07:00"
+      timezone: "Europe/Copenhagen"
+    groups:
+      github-actions:
+        patterns:
+          - "*"
