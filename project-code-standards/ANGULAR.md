@@ -131,8 +131,10 @@ Use icons from these Angular packages:
 - `@captains-chest/material-symbols-rounded-icons-filled`
 
 ```ts
-import { HomeIcon } from '@captains-chest/material-symbols-rounded-icons';
-import { HomeFilledIcon } from '@captains-chest/material-symbols-rounded-icons-filled';
+import { MsrHomeIconComponent } from '@captains-chest/material-symbols-rounded-icons/home';
+import { MsrfHomeIconComponent } from '@captains-chest/material-symbols-rounded-icons-filled/home';
 ```
+
+Import each icon from its own subpath (the icon name in kebab case, such as `/menu-book`), not from the package root.
 
 Prefer an icon from these packages over custom artwork or another icon set. When neither package can satisfy the requirement, pause and ask for explicit approval before introducing custom artwork or a different package.
